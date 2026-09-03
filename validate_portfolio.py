@@ -13,8 +13,8 @@ required_ids = ["about", "resume", "skills", "projects", "certificates", "achiev
 missing_ids = [section_id for section_id in required_ids if soup.find(id=section_id) is None]
 nav_targets = [link.get("href", "")[1:] for link in soup.select(".nav-link") if link.get("href", "").startswith("#")]
 missing_nav_targets = [target for target in nav_targets if soup.find(id=target) is None]
-resume_link = soup.select_one('a[download][href$="shaquib-ansari-cv.pdf"]')
-resume_path = root / "outputs" / "shaquib-ansari-cv.pdf"
+resume_link = soup.select_one('a[download][href$="shaquib-ansari-resume.pdf"]')
+resume_path = root / "outputs" / "shaquib-ansari-resume.pdf"
 certificate_paths = [
     root / "outputs" / "certificates" / "core-java-basics-upgrad.pdf",
     root / "outputs" / "certificates" / "big-data-201-infosys-springboard.pdf",
